@@ -5,17 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73fa33a6-550d-4001-8805-fd2b4a7fbebe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/GWC-PyGame-Repo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/Pug-GWC-EX.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pixel-Manip/Pixel-Anim.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Playing-Field/Field.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Playing-Field/Moving-Screen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/lemonade-155663_640.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/pug-8515766_640.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/terminator-8103080_640.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/terminator-8103086_640.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pixel-Manip/Blitting-example.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pixel-Manip/Optimization-techniques" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pixel-Manip/Pixel-notes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pixel-Manip/Pygame-Update-Display-ex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pixel-Manip/Syntax-notes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Playing-Field/Example123.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pixel-Manip/Pixel-Anim.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pixel-Manip/Pixel-Anim.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,15 +37,21 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2cdpeANaHewdpQfpbSZoJRj7mpP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.Example123.executor": "Run",
     "Python.Field.executor": "Run",
     "Python.Moving-Screen.executor": "Run",
+    "Python.Pixel-Anim.executor": "Run",
+    "Python.Pygame-Update-Display-ex.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -52,7 +59,29 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.Moving-Screen">
+  <component name="RunManager" selected="Python.Example123">
+    <configuration name="Example123" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GWC-PyGame-Repo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Playing-Field" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Playing-Field/Example123.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Field" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GWC-PyGame-Repo" />
       <option name="ENV_FILES" value="" />
@@ -97,10 +126,57 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Pixel-Anim" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GWC-PyGame-Repo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pixel-Manip" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pixel-Manip/Pixel-Anim.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Pygame-Update-Display-ex" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GWC-PyGame-Repo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pixel-Manip" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Pixel-Manip/Pygame-Update-Display-ex.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Moving-Screen" />
+        <item itemvalue="Python.Example123" />
         <item itemvalue="Python.Field" />
+        <item itemvalue="Python.Pygame-Update-Display-ex" />
+        <item itemvalue="Python.Pixel-Anim" />
+        <item itemvalue="Python.Moving-Screen" />
       </list>
     </recent_temporary>
   </component>
@@ -121,5 +197,8 @@
       <updated>1708451403519</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

@@ -1,0 +1,28 @@
+
+running = True
+
+while running:
+    for event in pygame.event.get():
+        if event == pygame.QUIT:
+            running = False
+
+    #**
+    for event in pygame.event.get():
+        pygame captures events: keyboard presses, mouse movements, window close button:
+        these events are captured via an event-queue
+
+        pygame.event.get():
+        All events from the queue are retrieved.
+
+        Within the loop we iterate/process each individual event available to us in the queue.
+
+        With the condition: if event.type == pygame.QUIT:
+        pygame.QUIT is triggered when the user attempts to close the window.
+        If this is the case then we set the flag to False, which halts the while loop,
+        resulting in the whole program completely ending.
+
+
+pygame.display.flip()
+
+    used for updating the entire screen to reflect any changes made to the display surface.
+    

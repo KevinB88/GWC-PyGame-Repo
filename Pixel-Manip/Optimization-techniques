@@ -1,0 +1,54 @@
+**
+When loading an image convert it to the same pixel format as the screen, this speeds up the blitting process:
+
+utilizing the .convert() method when necessary, or using .convert_alpha() for images with transparency
+
+? How exactly is the blitting process sped up?
+
+EX.
+
+image = pygame.image.load('image.png').convert_alpha()
+
+**
+Hardware acceleration:
+pygame.HWSURFACE
+pygame.DOUBLEBUF
+
+? Could you break down the functionality of the provided flags, and how they accelerate the hardware.
+
+Flags used when setting up the display mode. (Most effective in full-screen mode)
+
+***
+Frame-rate management
+
+pygame.time.Clock()
+clock.tick(fps)
+
+**
+Sprite-management:
+
+LayeredUpdates
+For sprites that need to be drawn in layers
+? Provide a simple application of LayeredUpdates in a pygame script
+
+-Utilizing sprite-sheets:
+as opposed to using individual images for each sprtie/frame, combine the sprites into a
+sprite-sheet: this reduces the number of I/O operations, ultimately improving memory usage
+and rendering speed.
+
+?Blit-subsections:
+
+**
+Event-handling:
+
+
+**
+General optimization:
+
+pygame.time.get_ticks()
+
+^ this can be used to measure the time taken at different portions of the game-loop.
+
+
+
+Consider using openGL for 3-D graphics processing

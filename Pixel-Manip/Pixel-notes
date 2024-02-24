@@ -1,0 +1,32 @@
+pygame.PixelArray(screen)
+creates a PixelArray object from the provided screen surface.
+
+A 2-D interface is provided by the object which allows the modifications
+of individual pixels within the space. Such that each pixel is accessed via its
+x-y positions.
+
+Modification of a pixel:
+
+pixels[x_pos][y_pos] = (0->255, 0->255, 0->255)
+
+
+# Rendering an animation to screen with pixels:
+
+del pixels
+
+after modification of a pixel the pixel array is deleted.
+
+This is crucial since the pixel-array object locks the surface
+preventing any outside operations from executing. This is the case
+until the PixelArray is deleted or out of the scope.
+
+********* Blitting *********
+
+Blitting: the process of transferring pixels from one surface to another.
+Essentially rendering an image onto another surface.
+
+
+*** Good sites for images (testing ***
+
+Pixabay, Unsplash, Pexels, PNGTree, Clipart Library, CleanPNG
+
