@@ -12,19 +12,6 @@ def star_space():
     print("**********************************************************")
 
 
-
-    '''
-        Tiers decide the difficulty/range of the values expected for the arithmetic operation
-
-        Tier 0:         0 - 5
-        Tier I:         1 - 10
-        Tier II:        1 - 15
-        Tier III:       5 - 25
-        Tier IV:        7 - 30
-        Tier V:         11 - 37
-    '''
-
-
 def line_space():
     print("----------------------------------------------------------")
 
@@ -212,7 +199,7 @@ def math_game_v1():
             bad_streak_count += 1
             wrong_count += 1
             good_streak_count = 0
-            good_streak_multiplier = 0
+            good_streak_multiplier = 1
 
             if bad_streak_count > bad_streak_longest:
                 bad_streak_longest = bad_streak_count
