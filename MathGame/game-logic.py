@@ -2,7 +2,6 @@
 
 import random
 import time
-import array
 
 
 def space():
@@ -51,9 +50,9 @@ def tier_arithmetic_range(tier):
 
 # Generating the arithmetic question: consisting of addition & multiplication
 # The difficulty argument decides the range of the numbers for the arithmetic operation
-def arithmetic_question():
+def arithmetic_question(tier):
 
-    lower_bound, upper_bound = tier_arithmetic_range(1)
+    lower_bound, upper_bound = tier_arithmetic_range(tier)
 
     number_1 = random.randint(lower_bound, upper_bound)
     number_2 = random.randint(lower_bound, upper_bound)
@@ -117,7 +116,30 @@ def math_game_v1():
 
     question_count = 0
 
-    # user_select_tier = input("Select a tier: ")
+    print("Welcome to the MATH game!")
+
+    print("""
+    Tiers decide the difficulty/range of the values expected for the arithmetic operation
+
+    Tier 0:         0 - 5
+    Tier I:         1 - 10
+    Tier II:        1 - 15
+    Tier III:       5 - 25
+    Tier IV:        7 - 30
+    Tier V:         11 - 37
+    """)
+
+    user_select_tier = ''
+
+    while not user_select_tier.isdigit() or int(user_select_tier) < 0 or int(user_select_tier) > 5:
+        user_select_tier = input("Select a tier: ")
+        if not user_select_tier.isdigit():
+            print("Please select a number from the choices above...")
+        elif int(user_select_tier) < 0 or int(user_select_tier) > 5:
+            print("Value must be between the tier ranges above...")
+
+    print("Great! Let's get started!")
+    time.sleep(1)
 
     print("If you would like to end the game immediately type in 'Q' or 'QUIT'..")
     time.sleep(1)
@@ -128,7 +150,7 @@ def math_game_v1():
 
     while True:
 
-        actual_answer, question = arithmetic_question()
+        actual_answer, question = arithmetic_question(int(user_select_tier))
 
         user_input_answer = input(question)
 
@@ -137,6 +159,7 @@ def math_game_v1():
 
         if not user_input_answer.isdigit():
             random_invalid_reply()
+            wrong_count += 1
             score = len(user_input_answer)
             total_score -= score
 
@@ -216,6 +239,9 @@ def math_game_v1():
             line_space()
 
         question_count += 1
+        print("###############")
+        print("Total Score: "+str(total_score))
+        print("###############")
 
     line_space()
     print("Game Over!")
