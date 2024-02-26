@@ -1,0 +1,4 @@
+Google's text to speech API
+from gtts import gTTS
+
+pyttsx3
