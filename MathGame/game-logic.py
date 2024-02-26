@@ -4,6 +4,11 @@ import random
 import time
 
 
+def random_positive_word_str():
+    positive_words = ['Cool', 'Excellent', 'Epic', 'Great', 'Nice', 'Good', 'Super', 'Rad']
+    return positive_words[random.randint(0, len(positive_words)-1)]
+
+
 def space():
     print()
 
@@ -74,6 +79,11 @@ def random_invalid_reply():
     print(invalid_replies[random.randint(0, len(invalid_replies)-1)])
 
 
+def random_invalid_user_reply():
+    invalid_user_replies = ['Could you please re-read what I asked you?', "Wh-what are you doin'?", "It ain't that hard pal, common.", "Try again, will ya'?", "Yeah that don't look right.."]
+    print(invalid_user_replies[random.randint(0, len(invalid_user_replies)-1)])
+
+
 def after_game_report(correct, incorrect, good_streak, bad_streak, questions, accumulated):
     star_space()
     print("Your report card: ")
@@ -104,6 +114,48 @@ def math_game_v1():
     question_count = 0
 
     print("Welcome to the MATH game!")
+
+    user_response = input("Would you like to see the rules? (Y or N): ")
+
+    while not user_response.lower() == 'y' or user_response.lower() == 'n':
+        random_invalid_user_reply()
+        time.sleep(2)
+        user_response = input("Would you like to see the rules? (Y or N): ")
+
+    if user_response == 'y'.lower():
+        print(random_positive_word_str()+", let's check it out!")
+        time.sleep(3)
+        star_space()
+        print("""
+        Rules of the Game:
+
+        1. GAMEPLAY
+            a. You are given arithmetic questions. With numbers to multiply and add between 1 and 15.
+            b. Maintain a score above 0 to continue playing!
+
+        2. SCORING/POINTS
+            a. For every correct answer: The answer to the question is added to your total score
+            b. For every wrong answer: The actual answer to the question is multiplied by 2 and then subtracted from your total score
+
+        3. STREAKS/BONUS POINTS
+            a. Good streak:
+                i. For every 3 questions correct, the answer to your question is multiplied by a number initially starting at 1.
+                ii. You are able to increase your streak multiplier until 4. Which means that 16 questions correct in a row will yield a score multiplier of 4.
+                iii. The result from the multiplication is multiplied by your answer and added to your total score
+                iv. Your streak comes to an end upon your first incorrect answer.
+
+            b. Bad Streak:
+                i. For every 2 questions incorrect, the answer to your question is multiplied by a number initially starting at 1, on top of it being multiplied by 2
+                ii. The multiple increases until a max of 4 for every 2 questions incorrect. Which means that 8 wrong answers in a row yields a multiplier of 4.
+                iii. The result from the multiplication is then multiplied by 2 and the actual answer of the question.
+
+                    EX. The maximum penalty is 8 * 2 * ACTUAL ANSWER. If the actual answer to a question is 100, then 1600 points are subtracted from your score!
+                iv. You can "redeem" yourself/reset your "BAD" streak after initiating a "GOOD" streak. Otherwise, your "BAD" streak will remain!
+        """)
+        star_space()
+    else:
+        print("Awesome! Select a tier: ")
+        time.sleep(2)
 
     print("""
     Tiers decide the difficulty/range of the values expected for the arithmetic operation
