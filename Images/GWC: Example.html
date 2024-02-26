@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  
+  <base href="/library/">
+
+  <meta charset="utf-8">
+  <title>Trinket</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="keywords" content="">
+  
+  <link rel="icon" href="/img/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/cache-prefix-778c9cfb/img/icons/apple-touch-icon-144x144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/cache-prefix-778c9cfb/img/icons/apple-touch-icon-114x114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/cache-prefix-778c9cfb/img/icons/apple-touch-icon-72x72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="/cache-prefix-778c9cfb/img/icons/apple-touch-icon-precomposed.png">
+  
+    <link rel="stylesheet" type="text/css" media="all" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css">
+  
+    <link rel="stylesheet" type="text/css" media="all" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <link rel="stylesheet" type="text/css" media="all" href="//trinket-vendor-assets.trinket.io/video.js/5.20.4/dist/video-js.min.css">
+  
+    <link rel="stylesheet" type="text/css" media="all" href="/cache-prefix-778c9cfb/css/base.css">
+  
+  
+  <script type="text/javascript">
+    trinket = {
+      config : {
+        apphostname    : 'trinket.io',
+        usersubdomains : true,
+        protocol       : 'https',
+        cachePrefix    : 'cache-prefix-',
+        prefixes       : {"components":"cache-prefix-410d6d0a","js":"cache-prefix-778c9cfb","css":"cache-prefix-778c9cfb","img":"cache-prefix-778c9cfb","fonts":"cache-prefix-778c9cfb","partials":"cache-prefix-778c9cfb","skulpt":"50e5bcc6","models":null,"m0-2021":"m0-2021"},
+        components     : {"ace-builds":"v1.2.6.1rc2","anchor-js":"2.0.0","angular-file-saver":"1.1.3","angular-notifyjs":"0.1.0","angular-ui-router":"0.2.11","angular-ui-tree":"2.0.10","angular-ui-utils":"0.1.1","angular-xeditable":"0.1.8","bluebird":"3.5.1","d3":"3.4.11","filereader":"107f68c3b9","file-saver.js":"1.20150507.2","font-mfizz":"2.0.1","gsap":"1.15.0","jquery-ui":"https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1","jsdiff":"1.0.8","jszip":"3.1.4","jszip-utils":"dist","lazysizes":"1.5.0","lodash":"2.4.1","modernizr":"2.7.2","ng-file-upload":"1.2.6","ngInfiniteScroll":"1.1.2","notifyjs":"0.4.2","opal":"0.6.2","restangular":"1.3.1","speakingurl":"1.1.5","video.js":"5.20.4","yamljs":"0.1.5"},
+        vendorHost     : 'https://trinket-vendor-assets.trinket.io',
+        trinketTypes   : [
+          { lang : 'python',     image : 'https://ee5817f8e2e9a2e34042-3365e7f0719651e5b8d0979bce83c558.ssl.cf5.rackcdn.com/python.png',     label : 'Python'                                     },
+          { lang : 'python3',    image : 'https://ee5817f8e2e9a2e34042-3365e7f0719651e5b8d0979bce83c558.ssl.cf5.rackcdn.com/python.png',     label : 'Python3', icon : 'trinket-key logo premium' },
+          { lang : 'pygame',     image : 'https://ee5817f8e2e9a2e34042-3365e7f0719651e5b8d0979bce83c558.ssl.cf5.rackcdn.com/python.png',     label : 'Pygame',  icon : 'trinket-key logo premium' },
+          { lang : 'java',       image : 'https://ee5817f8e2e9a2e34042-3365e7f0719651e5b8d0979bce83c558.ssl.cf5.rackcdn.com/java.png',       label : 'Java',    icon : 'trinket-key logo premium' },
+          { lang : 'R',          image : 'https://ee5817f8e2e9a2e34042-3365e7f0719651e5b8d0979bce83c558.ssl.cf5.rackcdn.com/R.png',          label : 'R',       icon : 'trinket-key logo premium' },
+          { lang : 'blocks',     image : 'https://ee5817f8e2e9a2e34042-3365e7f0719651e5b8d0979bce83c558.ssl.cf5.rackcdn.com/blocks.png',     label : 'Blocks'                                     },
+          { lang : 'html',       image : 'https://ee5817f8e2e9a2e34042-3365e7f0719651e5b8d0979bce83c558.ssl.cf5.rackcdn.com/html.png',       label : 'HTML'                                       },
+          { lang : 'glowscript', image : 'https://ee5817f8e2e9a2e34042-3365e7f0719651e5b8d0979bce83c558.ssl.cf5.rackcdn.com/glowscript.png', label : 'Web VPython'                                },
+          { lang : 'music',      image : 'https://ee5817f8e2e9a2e34042-3365e7f0719651e5b8d0979bce83c558.ssl.cf5.rackcdn.com/music.png',      label : 'Music'                                      }
+        ],
+        autorun           : ["python","glowscript","blocks","python3","java","glowscript-blocks","R"],
+        outputOnly        : ["python","html","glowscript","blocks","python3","pygame","java","glowscript-blocks","R"],
+        toggleCode        : ["python","html","glowscript","blocks","python3","pygame","java","glowscript-blocks","R"],
+        downloadable      : ["python","html","python3","pygame","java","blocks","glowscript-blocks","R","pygame"],
+        uploadable        : ["blocks","glowscript-blocks"],
+        hideGeneratedCode : ["blocks","glowscript-blocks"],
+        runOption         : {"python":["run","console"],"python3":["run","console"],"R":["run","console"]},
+        plans             : [{ "connect"  : "Connect"  },
+                             { "codeplus" : "Code+" }]
+      }
+    };
+  </script>
+  
+    <script src="//trinket-vendor-assets.trinket.io/modernizr/2.7.2/modernizr.js"></script>
+  
+    <script src="//trinket-vendor-assets.trinket.io/lodash/2.4.1/dist/lodash.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.20/angular.min.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/trinket.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/trinket-config.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/trinket-roles.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/util/template.js"></script>
+  
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KW3JPB2M7P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KW3JPB2M7P');
+</script>
+
+
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+function submitRecaptchaForm(formId) {
+  document.getElementById(formId).submit();
+}
+function submitContactForm() {
+  submitRecaptchaForm('contact-form');
+}
+function submitReportContentForm() {
+  document.getElementById('report-content-form').submit();
+}
+function submitPasswordResetForm() {
+  submitRecaptchaForm('password-reset-form');
+}
+function submitEmailForm(recaptcha) {
+  if (window.TrinketApp) {
+    window.TrinketApp.onSendEmailClick(recaptcha);
+  } else {
+    submitEmailModalForm(recaptcha);
+  }
+}
+function submitSignUpShortForm() {
+  submitRecaptchaForm('sign-up-short');
+}
+function submitSignUpLongForm() {
+  submitRecaptchaForm('sign-up-long');
+}
+function submitSignUpIndexForm() {
+  submitRecaptchaForm('sign-up-index');
+}
+function submitSignUpInterestForm() {
+  submitRecaptchaForm('interest-signup-form');
+}
+function submitEducatorForm() {
+  submitRecaptchaForm('submit-educator');
+}
+function submitM0RegistrationForm() {
+  $('#registration-form').trigger('submit');
+}
+function emailVerificationForm() {
+  $.ajax({
+    method: "POST",
+    url: "/api/users/verify-email",
+    data: { 'g-recaptcha-response': grecaptcha.getResponse() }
+  })
+  .done(function(result) {
+    if (result.success) {
+      $('#account').notify(
+        "Verification email sent."
+        , { position : 'top center', className : 'success' }
+      );
+    }
+    else {
+      $('#account').notify(
+        "There was a problem sending the verification email. Please try again."
+        , { position : 'top center', className : 'alert' }
+      );
+    }
+  })
+  .fail(function(err) {
+    $('#account').notify(
+      "There was a problem sending the verification email. Please try again."
+      , { position : 'top center', className : 'alert' }
+    );
+  });
+}
+</script>
+
+  
+</head>
+<body ng-app="trinket.library" id="trinket-library"
+      
+      class="loggedin ">
+
+  
+
+  <!-- for positioning footer at bottom of screen on short pages -->
+  <div class="main-content-wrapper">
+
+  <input id="whoami" type="hidden" value="kbedoya88">
+  
+  
+    <div class="nav-wrapper">
+      <nav class="top-bar" data-topbar data-options="is_hover: false" role="navigation" role="menubar" aria-label="Main Navigation">
+        <ul class="title-area">
+          <li class="name">
+            <a href="//trinket.io/" role="button" aria-label="Index Page">
+              <img src="/cache-prefix-778c9cfb/img/trinket-logo.png" alt="Trinket helps you teach with code" />
+            </a>
+            
+              
+              <a href="/plans"><span class="radius code-label">Code</span></a>
+              
+            
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+        </ul>
+        <section class="top-bar-section">
+          
+          <ul>
+            <li><a href="//trinket.io/home" aria-label="Go Home"><i class="fa fa-home"></i> Home </a>
+          </ul>
+          
+          <ul class="right">
+            
+              <li><a href="//trinket.io/plans"><i class="fa fa-star"></i>            <span><span class="hide-for-medium-only">Plans</span></span></a></li>
+              <li><a href="https://hourofpython.com">           <i class="fa fa-graduation-cap"></i>  <span><span class="hide-for-medium-only">Learn</span></span></a></li>
+              <li><a href="//trinket.io/help"> <i class="fa fa-question-circle"></i> <span><span class="hide-for-medium-only">Help </span></span></a></li>
+            
+            
+              <li class="has-dropdown" role="navigation" id="trinket-user-menu">
+                <a class="dropdown-btn" role='button' aria-controls="user_dropdown" aria-label="Open User Menu">
+                  <img id="nav-user-avatar" src="https://trinket-avatars.trinket.io/avatar-default.png" alt="Photo of Kevin Bedoya" class="avatar">
+                  <span id="userdata" data-user-id="65cc346ac7d2cff461752beb">kbedoya88</span>
+                </a>
+                <ul id="user_dropdown" class="dropdown"  role="menu" aria-label="User Menu">
+                  <li role="menuitem">
+                    <a href="//trinket.io/home">
+                      <i class="fa fa-home"></i> Home
+                    </a>
+                  </li>
+                  <li class="divider" role="presentation"></li>
+                  <li role="menuitem">
+                    <a href="//trinket.io/library/trinkets">
+                      My Trinkets
+                    </a>
+                  </li>
+                  <li class="has-dropdown" role="menuitem" >
+                    <a role="button" aria-controls="new_trinket_list">New Trinket</a>
+                    <ul id="new_trinket_list" class="dropdown" role="group" role="menu">
+                      <li><a href="//trinket.io/library/trinkets/create?lang=python"><i class="lang-sprite lang-sprite-python"></i> Python</a></li>
+                      <li><a href="//trinket.io/library/trinkets/create?lang=python3"><i class="lang-sprite lang-sprite-python"></i> Python3 <i class="trinket-key logo premium"></i></a></li>
+                      <li><a href="//trinket.io/library/trinkets/create?lang=pygame"><i class="lang-sprite lang-sprite-pygame"></i> Pygame <i class="trinket-key logo premium"></i></a></li>
+                      <li><a href="//trinket.io/library/trinkets/create?lang=R"><i class="lang-sprite lang-sprite-R"></i> R <i class="trinket-key logo premium"></i></a></li>
+                      <li><a href="//trinket.io/library/trinkets/create?lang=blocks"><i class="lang-sprite lang-sprite-blocks"></i> Blocks</a></li>
+                      <li><a href="//trinket.io/library/trinkets/create?lang=html"><i class="lang-sprite lang-sprite-html"></i> HTML</a></li>
+                      <li><a href="//trinket.io/library/trinkets/create?lang=glowscript"><i class="lang-sprite lang-sprite-glowscript"></i> Web VPython</a></li>
+                      <li><a href="//trinket.io/library/trinkets/create?lang=java"><i class="lang-sprite lang-sprite-java"></i> Java <i class="trinket-key logo premium"></i></a></li>
+                      <li><a href="//trinket.io/library/trinkets/create?lang=music"><i class="lang-sprite lang-sprite-music"></i> Music</a></li>
+                    </ul>
+                  </li>
+                  <li class="divider" role="presentation"></li>
+                  <li><a href="//trinket.io/account"><i class="fa fa-gear"></i> My Settings</a></li>
+                  
+                  <li class="divider" role="presentation"></li>
+                  <li><a href="//trinket.io/help">Help</a></li>
+                  <li><a href="//trinket.io/contact">Contact Us</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="//trinket.io/logout">
+                  <i class="fa fa-sign-out"></i> Sign Out
+                </a>
+              </li>
+            
+          </ul>
+        </section>
+      </nav>
+    </div>
+  
+
+  
+  
+
+  <section id="main-content" role="main">
+    
+  <div ui-view ng-init="role=''"></div>
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  <ul id="displayOptionTextList" class="hide">
+    <li data-value="">Show <span class="blocksOrCode">code</span> and output side-by-side (smaller screens will only show one at a time)</li>
+    <li data-value="outputOnly">Only show output (hide the <span class="blocksOrCode">code</span>)</li>
+    <li data-value="toggleCode">Only show <span class="blocksOrCode">code</span> or output (let users toggle between them)</li>
+  </ul>
+  <div id="shareModal" class="reveal-modal medium" data-reveal   role="dialog" aria-label="Share Trinket Link Dialog">
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="row">
+          <span class="modal-title" role="heading">Share Your Code!</span>
+        </div>
+        <form>
+          <div class="row">
+            <label for="shareURL"><i>Copy the link below to share your code</i></label>
+            <div id="shareUrl" class="faux-input" data-metric="linkShares" role="textbox" tabindex="0" aria-label="Copy this link to share your trinket."></div>
+          </div>
+          <div class="row">
+            <fieldset>
+              <legend>Customize</legend>
+              
+              <div id="shareRunOption">
+                <select id="runOptionLink" name="runOptionLink" class="runOptions" data-type="shareUrl" data-trinket-shortCode="" data-trinket-runMode="">
+                  <option value="">Allow either Run or Interactive console</option>
+                  <option value="run">Run code only</option>
+                  <option value="console">Interactive console only</option>
+                </select>
+              </div>
+              
+              
+              <div id="shareDisplayOptions">
+                <select id="displayOptionLink" name="displayOptionLink" class="displayOptions" data-type="shareUrl" data-trinket-shortCode="" data-trinket-runMode="">
+                  <option value="">Show code and output side-by-side (smaller screens will only show one at a time)</option>
+                  <option value="outputOnly">Only show output (hide the code)</option>
+                  <option value="toggleCode">Only show code or output (let users toggle between them)</option>
+                </select>
+              </div>
+              
+              
+              <input type="checkbox" id="showInstructionsShareToggle" name="showInstructionsShare" class="checkboxToggle" value="shareUrl" /><label for="showInstructionsShareToggle">Show instructions first when loaded</label>
+              
+            </fieldset>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+  <div id="embedModal" class="reveal-modal medium" data-reveal   role="dialog" aria-label="Embed Trinket Dialog">
+    <div class="row">
+      <span class="modal-title" role="heading">Embed Your Code!</span>
+    </div>
+    <form>
+      <div class="row">
+        <label for="embedCode">Embed this code on your site</label>
+      </div>
+      <div class="row">
+        <div class="small-12 columms">
+          <div id="embedCode" class="faux-input textarea" data-metric="embedShares" role="textbox" aria-multiline="false" tabindex="0" aria-label="Copy this embed code"></div>
+        </div>
+      </div>
+      <div class="row">
+        <fieldset>
+          <legend>Customize</legend>
+      
+        <div id="embedRunOption">
+          <select id="runOptionEmbed" name="runOptionEmbed" class="runOptions" data-type="embedCode" data-trinket-shortCode="" data-trinket-runMode="">
+            <option value="">Allow either Run or Interactive console</option>
+            <option value="run">Run code only</option>
+            <option value="console">Interactive console only</option>
+          </select>
+        </div>
+      
+      
+      <div id="embedDisplayOptions">
+        <select id="displayOptionEmbed" name="displayOptionEmbed" class="displayOptions" data-type="embedCode" data-trinket-shortCode="" data-trinket-runMode="">
+          <option value="">Show code and output side-by-side (smaller screens will only show one at a time)</option>
+          <option value="outputOnly">Only show output (hide the code)</option>
+          <option value="toggleCode">Only show code or output (let users toggle between them)</option>
+        </select>
+        
+        <input type="checkbox" id="autorunEmbedToggle" name="autorunEmbed" class="checkboxToggle" value="embedCode" /><label for="autorunEmbedToggle">Auto run trinket when loaded</label>
+        
+        
+        <input type="checkbox" id="hideGeneratedCodeEmbedToggle" name="hideGeneratedCodeEmbed" class="checkboxToggle" value="embedCode" /><label for="hideGeneratedCodeEmbedToggle">Do not show generated python</label>
+        
+        
+          <input type="checkbox" id="showInstructionsEmbedToggle" name="showInstructionsEmbed" class="checkboxToggle" value="embedCode" /><label for="showInstructionsEmbedToggle">Show instructions first when loaded</label>
+        
+      </div>
+      
+        </fieldset>
+      </div>
+    </form>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+  <div id="emailModal" class="reveal-modal medium" data-reveal   role="dialog" aria-label="Email Trinket Dialog">
+    <div class="row first-row">
+     <span class="modal-title" role="heading">Email Your Code!</span>
+    </div>
+    <form id="emailModalForm" data-trinket-id="" role="form">
+      <div class="row">
+        <div class="small-12 medium-3 columns">
+          <label class="inline" for="share-email">Send To</label>
+        </div>
+        <div class="small-12 medium-9 columns">
+          <input type="email" id="share-email" name="email" placeholder="What email address should we send the link to?" required />
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-3 columns">
+          <label class="inline" for="share-yourname">Your Name</label>
+        </div>
+        <div class="small-12 medium-9 columns">
+          <input type="text" id="share-yourname" name="yourname" placeholder="What is your name?" required />
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-3 columns">
+          <label class="inline" for="share-youremail">Your Email</label>
+        </div>
+        <div class="small-12 medium-9 columns">
+          <input type="email" id="share-youremail" name="youremail" value="kevinbedoyaemail88@gmail.com" placeholder="Your email address - so the recipient can reply to you" disabled/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 medium-3 columns">
+          <input id="emailToken" name="emailToken" type="hidden" value="" />
+          <button class="g-recaptcha button success small" data-sitekey="6LfeVWAUAAAAAGUzuHoa5jZ94HDopyRiRrCWFbr3" data-callback="submitEmailForm" data-badge="bottomleft">Send</button>
+        </div>
+        <div id="emailAlert" class="small-12 medium-9 columns end hide"></div>
+      </div>
+    </form>
+    
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+<div id="publishModal" class="reveal-modal medium" data-reveal   role="dialog" aria-label="Publish Trinket Dialog">
+  <div class="row">
+    <span class="modal-title" role="heading">Publish Your Trinket!</span><br>
+    <span>View all of your published trinkets <a href="/published" target="_blank">here</a>!</span>
+  </div>
+  <form id="publishModalForm" data-trinket-id="" role="form">
+    <div class="row">
+      <div class="small-12 medium-3 columns">
+        <label class="inline" for="publish-slug">
+          Site Name <i class="fa fa-info-circle open" data-tooltip="" aria-haspopup="true" title="Name must be unique. Lowercase letters, numbers, and dashes are allowed."></i>
+        </label>
+      </div>
+      <div class="small-10 medium-5 columns">
+        <input type="text" id="publish-slug" name="slug" required />
+      </div>
+      <div class="small-2 medium-4 columns">
+        <i id="slug-icon-status"></i>
+      </div>
+    </div>
+    <div id="slug-status" class="row hide">
+      <div class="small-12 medium-offset-3 medium-5 columns end">
+        <label id="slug-status-text">test</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-3 columns">
+        <label class="inline">Site URL</label>
+      </div>
+      <div class="small-12 medium-9 columns">
+        <p><a href="" id="published-url" target="_blank"></a></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-6 columns">
+        <a id="publishTrinket" class="button success small"><i class="fa fa-book"></i> <span id="publish-text">Publish</span></a>
+      </div>
+      <div class="small-6 columns">
+        <a id="unpublishTrinket" class="button caution small right">Unpublish</a>
+      </div>
+    </div>
+  </form>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="addToGroupModal" class="shared-modal reveal-modal medium" data-reveal  >
+  <div class="row">
+    <div id="add-to-group-messages"></div>
+    <h2>Add to Group</h2>
+  </div>
+  <div class="row">
+    <div class="medium-12 large-6 columns">
+      <section id="have-groups" class="hide">
+        <p>Decide which group to add this trinket below.</p>
+        <ul id="groups-list"></ul>
+      </section>
+      <section id="no-groups" class="hide">
+        <p>You don't have any groups that you can add a trinket to &mdash; try creating a new one!</p>
+      </section>
+    </div>
+    <div class="medium-12 large-6 columns">
+      <p>You can also create a new group.</p>
+      <form>
+        <div class="row">
+          <div class="small-12 columns">
+            <label>What's the Group name?</label>
+            <input type="text" name="name" placeholder="e.g. Introduction to Python" value="" required />
+
+            <label>What Description should show up on the page?</label>
+            <textarea name="description" rows="2" placeholder="What other information will group members need to know about this group?" required></textarea>
+
+            <label>Group code to let others join.</label>
+            <div class="faux-input" id="joinCode"></div>
+            <input type="hidden" name="joinCode" value="" />
+
+            <a id="createGroupAddTrinket" data-trinket-id="" class="button success tiny"><i></i> Create Group</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+  
+    <input id="roles" type='hidden' value='a1b4dacff0cbc564875886e7910b0c17+U2FsdGVkX19nDn/wzCz92Ji4OZt8QC9fvUrJIAbcoamrwtomSGLhk9kX3Mo8TnBPNC/1tQkHo3C6w1yNl7dpJ8JMyoHUULVg0BWLVR+vCcJR/SIV9aN1yg5TCqB3T6XfkonjRQeQKnWnrf1HDEZrPorW1VXjAeNpyGY3BZhNzvzqekQWeclR8dDGDwjPHXhNPMCFrQOcu0OUDsInTNnoWD9gwo1zNokT+/umlMTuFVgg64dAbGwzodkXTN2hVTjvWPLkk4kHowPY7VIhOXHoZdAc2BkGO1F+56XljwftDO959n+lJuil/rj1Tu6ZPgMukeoe25IUv4oRqUvim3zrW9z1kfdBQ8Qf4nZE1r39EegT37Vsn5x9MF50lKQM1vWPOPNmJd9yIBrg9xLfpCPwQOp+qqupXVxEuvGBaAj7A7PpHHnCkMvaUEC8ffB34CLKvDRMJGXEIF+e8gPmWvdgv+BJK60Y1LGNlhmkq6WtpmYYY5mDEICFDIx6oKNFFPZ7nJeSHlD5lMZN/AeCdwKEW/aBiQ4R2VKdvuTewKnQI1ju/4yQPwu5/0FnDZt0csx7lT/lCOshrbnZWoLrbqm5Tx32KX2qV3uy8XzS2VPDYmk8rEHSiHbdDm1PzMeUNny4yts9uU+y91lLNdDKetUxtsr1QfW67hCTF7mRqE9TQpDKUZEWo2BLVYou+U5+IsbnM34RNbZWk0SaVYFJJikKRFSjqoz0CLV6CYzzmHgMLKY='>
+  
+
+  </section>
+
+    
+
+  </div> <!-- end main-content-wrapper -->
+
+  
+    
+  
+
+  <div trinket-language></div>
+
+  
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    messageStyle : "none",
+    tex2jax      : {
+      inlineMath     : [['$(',')$'], ['\\(','\\)']],
+      ignoreClass    : "mathjax-ignore",
+      processEscapes : true
+    },
+    TeX          : {
+      extensions : ["[siunitx]/siunitx.js"]
+    }
+  });
+  MathJax.Ajax.config.path['siunitx']  = "/cache-prefix-410d6d0a/components/Mathjax-siunitx";
+  </script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.20/angular-route.min.js"></script>
+  
+    <script src="//trinket-vendor-assets.trinket.io/restangular/1.3.1/dist/restangular.min.js"></script>
+  
+    <script src="/cache-prefix-410d6d0a/components/marked/lib/marked.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+  
+    <script src="//trinket-vendor-assets.trinket.io/ace-builds/v1.2.6.1rc2/src-min/ace.js"></script>
+  
+    <script src="/cache-prefix-410d6d0a/components/foundation/js/foundation.min.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/partials/directives/flash.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/partials/directives/trinket.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/services/roles.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/partials/directives/join-course.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/partials/directives/courses.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/util/cache.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/gallery/gallery.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/debug.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/util/ng-text-select.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/util/text-select.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/trinket-share.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/trinket-groups.js"></script>
+  
+    <script src="//trinket-vendor-assets.trinket.io/notifyjs/0.4.2/dist/notify.js"></script>
+  
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.20/angular-aria.min.js"></script>
+  
+  
+    <script src="//trinket-vendor-assets.trinket.io/ng-file-upload/1.2.6/angular-file-upload.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-foundation/0.8.0/mm-foundation-tpls.min.js"></script>
+  
+    <script src="//trinket-vendor-assets.trinket.io/angular-notifyjs/0.1.0/angular-notifyjs.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.13/moment-timezone-with-data.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.1/angular-moment.min.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/main/app.min.js"></script>
+  
+
+  
+  <script>$(document).foundation()</script>
+  
+
+  <script>
+      $(document).on('open', '#newTrinketModal', function() {
+        $('.has-dropdown').removeClass('hover');
+      });
+      $('*[data-auth-init]').click(function(event) {
+        event.preventDefault();
+        var href     = $(this).attr('href');
+        var provider = $(this).data('auth-init');
+
+        try {
+          gtag('event', 'auth_started', {
+            'location': window.location.pathname,
+            'provider': provider,
+            'event_callback': function() {
+              window.location.href = href;
+            }
+          });
+        } catch(e) {
+          console.log('gtag auth_started e:', e);
+          window.location.href = href;
+        }
+      });
+      
+
+      $.notify.addStyle('foundation', {
+        html : '<div><span data-notify-html></span></div>'
+      });
+      $.notify.defaults({
+          position  : 'bottom center'
+        , arrowShow : false
+        , style     : 'foundation'
+        , gap       : 0
+      });
+  </script>
+  
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-foundation/0.8.0/mm-foundation-tpls.min.js"></script>
+  
+    <script src="//trinket-vendor-assets.trinket.io/angular-ui-router/0.2.11/release/angular-ui-router.min.js"></script>
+  
+    <script src="//trinket-vendor-assets.trinket.io/ngInfiniteScroll/1.1.2/build/ng-infinite-scroll.min.js"></script>
+  
+    <script src="//trinket-vendor-assets.trinket.io/angular-xeditable/0.1.8/dist/js/xeditable.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.20/angular-animate.min.js"></script>
+  
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Sortable/1.4.2/Sortable.min.js"></script>
+  
+    <script src="/cache-prefix-778c9cfb/js/library/app.min.js"></script>
+  
+<script src='https://trinket-vendor-assets.trinket.io/speakingurl/1.1.5/speakingurl.min.js' charset='utf-8'></script>
+<script type="text/javascript">
+var selectText = TrinketIO.import('utils.selectText');
+var shareOptions = TrinketIO.import('trinket.share');
+$('#shareUrl').click(function(event) {
+  selectText.byId('shareUrl');
+});
+$('#embedCode').click(function(event) {
+  selectText.byId('embedCode');
+});
+
+shareOptions.init();
+
+function submitEmailModalForm(recaptcha) {
+  if ($('#share-email').val() && $('#share-yourname').val() && $('#share-youremail').val()) {
+    $('#sendEmail').attr('value', 'Sending ...');
+    $('#sendEmail').addClass('disabled');
+
+    var trinket_id = $('#emailModalForm').data('trinket-id');
+    $.post('/api/trinkets/' + trinket_id + '/email', {
+      email   : $('#share-email').val(),
+      name    : $('#share-yourname').val(),
+      replyTo : $('#share-youremail').val(),
+      token   : $('#emailToken').val(),
+      'g-recaptcha-response': recaptcha
+    }).done(function(data) {
+      $('#share-email').val('');
+
+      var alertBox = '<div data-alert class="alert-box success"> Your email was sent! Thanks for sharing! <a class="close">&times;</a></div>';
+      $('#emailAlert').empty().removeClass("hide").html(alertBox);
+      $(document).foundation('alert', 'reflow');
+
+      setTimeout(function() {
+        $('#emailAlert').addClass("hide");
+      }, 3000);
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+      var alertBox = '<div data-alert class="alert-box warning"> There was a problem sending your email. Please try again later. <a href="#" class="close">&times;</a></div>';
+      $('#emailAlert').empty().removeClass("hide").html(alertBox);
+      $(document).foundation('alert', 'reflow');
+    }).always(function() {
+      $('#sendEmail').attr('value', 'Send');
+      $('#sendEmail').removeClass('disabled');
+    });
+  }
+}
+
+var $message;
+
+$('#createGroupAddTrinket').click(function(event) {
+  var $self = $(this);
+
+  event.preventDefault();
+
+  if ($message) {
+    $message.remove();
+  }
+  $(this).removeClass('disabled');
+
+  // check name and description
+  // create joinCode client side?
+
+  // post to /api/groups
+  // if success, add trinket, add to groups list on left?
+  // if error, drop in message as usual
+});
+</script>
+
+  
+
+<script type="text/javascript">
+$(document).on('click', '.contact-us-link', function(event) {
+  if (typeof(Intercom) !== "undefined") {
+    event.preventDefault();
+    Intercom('showNewMessage');
+  }
+});
+</script>
+
+</body>
+</html>

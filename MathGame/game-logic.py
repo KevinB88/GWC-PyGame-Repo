@@ -1,7 +1,18 @@
 # This file consists of helper functions and game logic
 
+'''FreeSound password: $ounds90Monkey34@! '''
+
 import random
 import time
+import pygame
+
+pygame.mixer.init()
+
+correct_sound_path = '/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/GWC/PyGame/GWC-PyGame-Repo/MathGame/MediaPipe/Sound-Effects/131662__bertrof__game-sound-correct_v2.wav'
+correct_sound = pygame.mixer.Sound(correct_sound_path)
+
+wrong_sound_path = '/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/GWC/PyGame/GWC-PyGame-Repo/MathGame/MediaPipe/Sound-Effects/131657__bertrof__game-sound-wrong.wav'
+wrong_sound = pygame.mixer.Sound(wrong_sound_path)
 
 
 def random_positive_word_str():
@@ -211,6 +222,7 @@ def math_game_v1():
         elif int(user_input_answer) == actual_answer:
 
             random_cheer()
+            correct_sound.play()
             good_streak_count += 1
             correct_count += 1
 
@@ -247,6 +259,7 @@ def math_game_v1():
 
         elif int(user_input_answer) != actual_answer:
             random_jeer()
+            wrong_sound.play()
 
             bad_streak_count += 1
             wrong_count += 1
