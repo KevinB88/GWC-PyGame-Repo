@@ -12,6 +12,7 @@ import threading
 
 from Text_To_Speech_Pack.Math_Game_Speech_Module import speak
 from Game_Music.music_init import play_music
+from GameVoiceLines import lines
 
 pygame.mixer.init()
 
@@ -21,7 +22,11 @@ correct_sound = pygame.mixer.Sound(correct_sound_path)
 wrong_sound_path = '/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/GWC/PyGame/GWC-PyGame-Repo/MathGame/MediaPipe/Sound-Effects/131657__bertrof__game-sound-wrong.wav'
 wrong_sound = pygame.mixer.Sound(wrong_sound_path)
 
-voice = True
+voice = 'Daniel'
+character = 'Daniel'
+
+# Available characters: Samantha(English), Daniel(English), Thomas(French), Milena(Russian), Whisper(WARNING: Creepy), Zarox (Robotic)
+# Moira (Irish English), Tessa (South African English)
 
 
 def random_positive_word_str():
@@ -84,20 +89,22 @@ def arithmetic_question(tier):
 
 def random_cheer(voiced):
 
-    cheers = ["Great job!", "Excellent!", "Incredible!", "Keep it up!", "Let's Go!", "Fantastic!", "Keep pleasing!", "That's how its done!"]
+    # cheers = ["Great job!", "Excellent!", "Incredible!", "Keep it up!", "Let's Go!", "Fantastic!", "Keep pleasing!", "That's how its done!"]
+    cheers = lines.default_voice_cheers
     # return cheers[index % len(cheers)]
     if voiced:
-        speak((cheers[random.randint(0, len(cheers)-1)]))
+        speak((cheers[random.randint(0, len(cheers)-1)]), character)
     else:
         print(cheers[random.randint(0, len(cheers)-1)])
 
 
 def random_jeer(voiced):
-    jeers = ["Wrong!", "Oops!", "That's not right!", "Incorrect!", "Oh come on!", "Get it right next time will you?", "Are you kidding me?", "That ain't right pal.."]
+    # jeers = ["Wrong!", "Oops!", "That's not right!", "Incorrect!", "Oh come on!", "Get it right next time will you?", "Are you kidding me?", "That ain't right pal.."]
+    jeers = lines.default_voice_jeers
     # return jeers[index % len(jeers)]
 
     if voiced:
-        speak((jeers[random.randint(0, len(jeers) - 1)]))
+        speak((jeers[random.randint(0, len(jeers) - 1)]), character)
     else:
         print(jeers[random.randint(0, len(jeers)-1)])
 
@@ -106,7 +113,7 @@ def random_invalid_reply(voiced):
     invalid_replies = ["Umm, what?!", "Try again pal..", "That's not a valid answer..", "What did you mean to type?!", "Uhh, try a number next time..", "Not even close.."]
 
     if voiced:
-        speak(invalid_replies[random.randint(0, len(invalid_replies)-1)])
+        speak(invalid_replies[random.randint(0, len(invalid_replies)-1)], character)
     else:
         print(invalid_replies[random.randint(0, len(invalid_replies)-1)])
 
@@ -115,7 +122,7 @@ def random_invalid_user_reply(voiced):
     invalid_user_replies = ['Could you please re-read what I asked you?', "Wh-what are you doin'?", "It ain't that hard pal, common.", "Try again, will ya'?", "Yeah that don't look right.."]
 
     if voiced:
-        speak(invalid_user_replies[random.randint(0, len(invalid_user_replies)-1)])
+        speak(invalid_user_replies[random.randint(0, len(invalid_user_replies)-1)], character)
     else:
         print(invalid_user_replies[random.randint(0, len(invalid_user_replies)-1)])
 
@@ -133,6 +140,61 @@ def after_game_report(correct, incorrect, good_streak, bad_streak, questions, ac
     star_space()
 
 
+def game_voice_intro(voiced):
+    intro_list = lines.default_voice_game_intro
+    intro = intro_list[random.randint(0, len(intro_list)-1)]
+    if voiced:
+        speak(intro, character)
+    else:
+        print(intro)
+
+
+def game_voice_outro(voiced):
+    outro_list = lines.default_voice_game_outro
+    outro = outro_list[random.randint(0, len(outro_list)-1)]
+    if voiced:
+        speak(outro, character)
+    else:
+        print(outro)
+
+
+def game_voice_rule_inquiry(voiced):
+    inquiry_list = lines.default_voice_rule_inquiry
+    inquiry = inquiry_list[random.randint(0, len(inquiry_list)-1)]
+    if voiced:
+        speak(inquiry, character)
+    else:
+        return inquiry
+
+
+def game_voice_rule_skip(voiced):
+    skip_replies = lines.default_voice_rule_skip
+    reply = skip_replies[random.randint(0, len(skip_replies)-1)]
+    if voiced:
+        speak(reply, character)
+    else:
+        print(reply)
+
+
+def game_voice_streak_cheer(voiced):
+    streak_cheers = lines.default_voice_streak_initiated
+    cheer = streak_cheers[random.randint(0, len(streak_cheers)-1)]
+    if voiced:
+        speak(cheer, character)
+    else:
+        print(cheee)
+
+# Be warned!
+def game_voice_cheers_18(voiced):
+    cheers_18 = lines.default_voice_18_cheers
+    cheer = cheers_18[random.randint(0, len(cheers_18)-1)]
+    if voiced:
+        speak(cheer, character)
+    else:
+        print(cheer)
+
+
+
 def math_game_v1():
 
     total_score = 0
@@ -148,36 +210,35 @@ def math_game_v1():
     bad_streak_longest = 0
     bad_streak_count = 0
 
+    streak_message = 0
+
     question_count = 0
 
     # ending_tune.play()
 
-    if voice:
-        speak("Welcome to the MATH game!")
-    else:
-        print("Welcome to the MATH game!")
+    # introduction to the game function
+    game_voice_intro(voice)
 
     time.sleep(1)
 
-    if voice:
-        speak("Would you like to see the rules? Yes or no?")
+    # rule inquiry
+    game_voice_rule_inquiry(voice)
 
-    user_response = input("Would you like to see the rules? (Y or N): ")
+    user_response = input(game_voice_rule_inquiry(False)+" ")
 
     while True:
 
-        if user_response.lower() == 'y' or user_response.lower() == 'n':
+        if user_response.lower() == 'yes' or user_response.lower() == 'no':
             break
 
-        print(user_response)
         random_invalid_user_reply(True)
         time.sleep(1)
-        user_response = input("Would you like to see the rules? (Y or N): ")
+        user_response = input(game_voice_rule_inquiry(False) + ": ")
 
-    if user_response == 'y'.lower():
+    if user_response == 'yes'.lower():
 
         if voice:
-            speak(random_positive_word_str()+", let's check it out!")
+            speak(random_positive_word_str()+", let's check it out!", character)
         else:
             print(random_positive_word_str()+", let's check it out!")
 
@@ -211,13 +272,11 @@ def math_game_v1():
         star_space()
 
     else:
-        if voice:
-            speak("Seems that you know your stuff already!")
-        else:
-            print("Seems that you know your stuff already!")
+        game_voice_rule_skip(voice)
 
+    # tier confirmation
     if voice:
-        speak("Awesome! Select a tier: ")
+        speak("Awesome! Select a tier!", character)
     else:
         print("Awesome! Select a tier: ")
 
@@ -237,31 +296,35 @@ def math_game_v1():
     while not user_select_tier.isdigit() or int(user_select_tier) < 0 or int(user_select_tier) > 5:
         user_select_tier = input("Select a tier: ")
         if not user_select_tier.isdigit():
+            # tiers: selecting a number from the provided list
             if voice:
-                speak("Please select a number from the choices above...")
+                speak("Please select a number from the choices above...", character)
             else:
                 print("Please select a number from the choices above...")
             time.sleep(1)
         elif int(user_select_tier) < 0 or int(user_select_tier) > 5:
             if voice:
-                speak("Value must be between the tier ranges above...")
+                speak("Value must be between the tier ranges above...", character)
             else:
                 print("Value must be between the tier ranges above...")
 
+    # getting started
     if voice:
-        speak("Great! Let's get started!")
+        speak("Great! Let's get started!", character)
     else:
         print("Great! Let's get started!")
     time.sleep(1)
 
+    # information on ending the game
     if voice:
-        speak("If you would like to end the game immediately type in 'Q' or 'QUIT'..")
+        speak("If you would like to end the game immediately type in 'Q' or 'QUIT'..", character)
     else:
-        print("If you would like to end the game immediately type in 'Q' or 'QUIT'..")
+        print("If you would like to end the game immediately type in 'Q' or 'QUIT'..", character)
     time.sleep(1)
 
+    # wishing the player good luck
     if voice:
-        speak("Good luck!")
+        speak("Good luck!", character)
     else:
         print("Good luck!")
     time.sleep(1)
@@ -280,7 +343,7 @@ def math_game_v1():
     # Create an  event object that can be used to signal the thread to stop
     stop_event = threading.Event()
 
-    music_thread = threading.Thread(target=play_music, args=(random_track, stop_event, 0.4))
+    music_thread = threading.Thread(target=play_music, args=(random_track, stop_event, 0.2))
     music_thread.start()
 
     while True:
@@ -312,6 +375,7 @@ def math_game_v1():
             random_cheer(True)
             good_streak_count += 1
             correct_count += 1
+            streak_message += 1
 
             if good_streak_count > good_streak_longest:
                 good_streak_longest = good_streak_count
@@ -321,18 +385,24 @@ def math_game_v1():
 
                 if good_streak_multiplier == 4:
                     if voice:
-                        speak("You've reached the maximum streak!")
+                        speak("You've reached the maximum streak multiplier!", character)
                     else:
-                        print("You've reached the maximum streak!")
+                        print("You've reached the maximum streak multiplier!")
                     random_cheer(True)
                     print("Multiplier: " + str(good_streak_multiplier))
                 else:
-                    if voice:
-                        speak("Your on a streak!")
-                    else:
-                        print("Your on a streak!")
+                    game_voice_streak_cheer(voice)
                     print("Multiplier: " + str(good_streak_multiplier))
                 space()
+
+            if good_streak_multiplier >= 4 and streak_message % random.randint(3, 5) == 0:
+                game_voice_streak_cheer(voice)
+
+            # if good_streak_multiplier >= 4 and good_streak_multiplier < 16 and streak_message % 3 == 0:
+            #     game_voice_cheers_18(voice)
+            # elif good_streak_multiplier >= 16 and streak_message % 4 == 0:
+            #     game_voice_cheers_18(voice)
+
 
                 if bad_streak_count > 0:
                     if voice:
@@ -356,6 +426,7 @@ def math_game_v1():
             accumulated_score += score
 
             print("+"+str(score)+" points!")
+            print("Good streak: "+str(good_streak_count))
             line_space()
 
         elif int(user_input_answer) != actual_answer:
@@ -376,17 +447,17 @@ def math_game_v1():
                 bad_streak_multiplier += 1
                 if bad_streak_count == 2:
                     if voice:
-                        speak("You've started a BAD streak!")
+                        speak("You've started a BAD streak!", character)
                     else:
                         print("You've started a BAD streak!")
                 elif bad_streak_multiplier == 4:
                     if voice:
-                        speak("You've reached the MAX-BAD streak multiplier!")
+                        speak("You've reached the MAX-BAD streak multiplier!", character)
                     else:
                         print("You've reached the MAX-BAD streak multiplier!")
                 else:
                     if voice:
-                        speak("You're still on a BAD streak!")
+                        speak("You're still on a BAD streak!", character)
                     else:
                         print("You're still on a BAD streak!")
                 print("BAD streak multiplier: " + str(bad_streak_multiplier))
@@ -406,10 +477,7 @@ def math_game_v1():
         print("Total Score: "+str(total_score))
         print("###############")
 
-    if voice:
-        speak("Thanks for playing!")
-    else:
-        print("Thanks for playing!")
+    game_voice_outro(voice)
     time.sleep(1)
 
     # ending_tune.play()
@@ -420,7 +488,6 @@ def math_game_v1():
     line_space()
     print("Game Over!")
     after_game_report(correct_count, wrong_count, good_streak_longest, bad_streak_longest, question_count, accumulated_score)
-
 
 
 if __name__ == "__main__":

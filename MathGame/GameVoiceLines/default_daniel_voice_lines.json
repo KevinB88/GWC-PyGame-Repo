@@ -1,0 +1,16 @@
+{
+    "greetings": [
+        "Hello",
+        "Hello there!",
+        "Now that's what I'm talking about!"
+    ],
+    "farewells": [
+        "Goodbye!",
+        "Have a good one!"
+    ],
+    "Random": [
+        "Milkshake!",
+        "I really like it when the clouds are blue!",
+        "Patrick knows how to get it on!"
+    ]
+}

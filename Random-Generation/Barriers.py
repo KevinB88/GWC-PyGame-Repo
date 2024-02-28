@@ -8,9 +8,9 @@ pygame.mixer.init()
 
 # Default sound effects
 
-player_impact_sound = pygame.mixer.Sound('/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/GWC/PyGame/GWC-PyGame-Repo/Sound-Effects/hurt_c_08-102842.mp3')
-player_move_up_sound = pygame.mixer.Sound('/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/GWC/PyGame/GWC-PyGame-Repo/Sound-Effects/movement-swipe-whoosh-3-186577.mp3')
-player_move_down_sound = pygame.mixer.Sound('/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/GWC/PyGame/GWC-PyGame-Repo/Sound-Effects/movement-swipe-whoosh-3-186577.mp3')
+# player_impact_sound = pygame.mixer.Sound('/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/GWC/PyGame/GWC-PyGame-Repo/Sound-Effects/hurt_c_08-102842.mp3')
+# player_move_up_sound = pygame.mixer.Sound('/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/GWC/PyGame/GWC-PyGame-Repo/Sound-Effects/movement-swipe-whoosh-3-186577.mp3')
+# player_move_down_sound = pygame.mixer.Sound('/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/GWC/PyGame/GWC-PyGame-Repo/Sound-Effects/movement-swipe-whoosh-3-186577.mp3')
 # bullet_spawn = pygame.mixer.Sound()
 
 # Screen dimensions
@@ -133,11 +133,11 @@ def game_loop():
             running = False
 
         if player_moved_counter_up == 6:
-            player_move_up_sound.play()
+            # player_move_up_sound.play()
             player_moved_counter_up = 0
 
         if player_moved_counter_down == 6:
-            player_move_down_sound.play()
+            # player_move_down_sound.play()
             player_moved_counter_down = 0
 
         player.draw()
@@ -160,7 +160,7 @@ def game_loop():
             player_regen_counter += 1
 
         if player_initial_tap:
-            player_impact_sound.play()
+            # player_impact_sound.play()
             player_initial_tap = False
 
         if player_lives == 0:
