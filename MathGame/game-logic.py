@@ -406,9 +406,9 @@ def math_game_v1():
 
                 if bad_streak_count > 0:
                     if voice:
-                        speak("You've redeemed yourself!")
+                        speak("You've redeemed yourself!", character)
                     else:
-                        print("You've redeemed yourself!")
+                        print("You've redeemed yourself!", character)
 
                     if voice:
                         speak("Your BAD streak has reset to 0!")
@@ -434,6 +434,13 @@ def math_game_v1():
 
             # time.sleep(1)
             wrong_sound.play()
+
+            if voice:
+                speak("The actual answer was: "+str(actual_answer), character);
+                print("Answer: "+str(actual_answer));
+            else:
+                speak("The actual answer was: "+str(actual_answer), character);
+
 
             bad_streak_count += 1
             wrong_count += 1
