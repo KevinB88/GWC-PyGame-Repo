@@ -1,112 +1,83 @@
 import pygame
 import sys
-import threading
-import time
-import subprocess
-import math
-# import pygame.mixer
 
-
-def speak(voice, message):
-    subprocess.run(['say', '-v', voice, message])
-
-
-def object_move_rate(player_x_pos, screen_w, t):
-    return (screen_w - player_x_pos) // t
-
-
-def timer(secs):
-    time.sleep(secs)
-    speak('Daniel', 'The object has reached the player!')
-
-
+# Initialize Pygame
 pygame.init()
 
-screen_width = 400
+# Screen setup
+screen_width = 800
 screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 
-background_color = (0, 0, 0)
-object_color = (255, 0, 0)
+# Colors
+background_color = (30, 30, 30)
+text_color = (255, 255, 255)
+box_color = (60, 60, 60)
 
-# Create a color wheel to define the colors easier:
-player_color = (0, 255, 0)
-player_position = [screen_width // 2, screen_height // 2]
-player_size = [100, 100]
-player_speed = 0
+# Font setup
+font = pygame.font.Font(None, 32)
 
-line_color = (255, 255, 255)
-line_position = [player_position[0], 0]
-line_size = [10, 1000]
-line_speed = 0
+# Text input box setup
+input_box = pygame.Rect(100, 100, 140, 32)
+text = ''
+active = False  # State of the input box
 
-timer_counter = 0
-seconds = 7
-
-time_thread = threading.Thread(target=timer, args=(seconds,))
-speak_thread = threading.Thread(target=speak, args=('Daniel', f'This process iterated {timer_counter} times'))
-
+# Object details
 object_position = [0, screen_height // 2]
 object_size = [50, 50]
-object_speed = 5
+object_speed = 5  # Default speed
 
 clock = pygame.time.Clock()
 
-flag = 0
-
-fixed_rate = object_move_rate(player_position[0], screen_width, seconds)
-
-speak_flag = 0
-
-start_time = time.time()
-
+# Main game loop
 running = True
 while running:
     for event in pygame.event.get():
-        if event == pygame.QUIT:
+        if event.type == pygame.QUIT:
             running = False
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            # If the user clicked on the input_box rect.
+            if input_box.collidepoint(event.pos):
+                # Toggle the active variable.
+                active = not active
+            else:
+                active = False
+        if event.type == pygame.KEYDOWN:
+            if active:
+                if event.key == pygame.K_RETURN:
+                    print(text)
+                    try:
+                        object_speed = float(text)
+                    except ValueError:
+                        print("Please enter a valid number.")
+                    text = ''  # Reset text
+                elif event.key == pygame.K_BACKSPACE:
+                    text = text[:-1]
+                else:
+                    text += event.unicode
 
-    timer_counter += 1
-
-    delta_time = clock.tick(60) / 1000.0
-
-    # if flag < 1:
-    #     time_thread.start()
-    #     flag += 1
-
-    object_position[0] += (fixed_rate * (1/60)) * 2
-
-    if object_position[0] >= player_position[0]:
-        if speak_flag < 1:
-            print(timer_counter)
-            print(f'Rate: {timer_counter / seconds} increments per second.')
-            current_time = time.time()
-            print(f'Elapsed time: {math.floor(current_time - start_time)} seconds.')
-            speak('Daniel', 'The object has reached the player!')
-
-            speak_flag += 1
-
-    # if object_position[0] > screen_width:
-    #     object_position[0] = 0 - object_size[0]
-
-    screen.fill(background_color)
+    # Move the object
+    object_position[0] += object_speed
+    if object_position[0] > screen_width:
+        object_position[0] = 0 - object_size[0]
 
     keys = pygame.key.get_pressed()
-
     if keys[pygame.K_q]:
         running = False
 
-    pygame.draw.rect(screen, object_color, pygame.Rect(object_position[0], object_position[1], object_size[0], object_size[1]))
-    pygame.draw.rect(screen, player_color, pygame.Rect(player_position[0], player_position[1], player_size[0], player_size[1]))
-    pygame.draw.rect(screen, line_color, pygame.Rect(line_position[0], line_position[1], line_size[0], line_size[1]))
+    # Render
+    screen.fill(background_color)
+    # Draw the object
+    pygame.draw.rect(screen, text_color, pygame.Rect(object_position[0], object_position[1], object_size[0], object_size[1]))
+    # Draw the input box
+    txt_surface = font.render(text, True, text_color)
+    width = max(200, txt_surface.get_width()+10)
+    input_box.w = width
+    screen.blit(txt_surface, (input_box.x+5, input_box.y+5))
+    pygame.draw.rect(screen, box_color, input_box, 2)
 
     pygame.display.flip()
-
-    clock.tick(60)
-
-# time_thread.join()
+    clock.tick(30)
 
 pygame.quit()
 sys.exit()
-
-
