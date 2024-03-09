@@ -51,23 +51,6 @@ class Barrier:
         barrier_rect = pygame.Rect(self.x, self.y, self.width, self.height)
         return barrier_rect.colliderect(player_rect)
 
-
-class Player:
-    def __init__(self, image_path, x, y):
-        self.image = pygame.image.load(image_path)
-        self.rect = self.image.get_rect(topleft=(x, y))
-        self.speed = 5
-
-    def move(self, direction):
-        if direction == 'up' and self.rect.top > 0:
-            self.rect.y -= self.speed
-        elif direction == 'down' and self.rect.bottom < SCREEN_HEIGHT:
-            self.rect.y += self.speed
-
-    def draw(self):
-        screen.blit(self.image, self.rect)
-
-
 class PlayerShape:
     def __init__(self, color, position=(100, 100), size=(50, 50)):
         self.color = color
@@ -88,17 +71,9 @@ class PlayerShape:
             self.rect.x += self.speed
 
 
+running = True
+
 def game_loop():
-    barriers = []
-    barrier_add_counter = 0
-    running = True
-    player_hit = False
-    player_lives = 27
-    player_regen_counter = 0
-    player_moved = False
-    player_moved_counter_up = 0
-    player_moved_counter_down = 0
-    player_initial_tap = False
 
     while running:
         for event in pygame.event.get():
@@ -106,71 +81,9 @@ def game_loop():
                 pygame.quit()
                 sys.exit()
 
-        screen.fill(WHITE)
 
-        # Add a new barrier every 90 frames
-        barrier_add_counter += 1
-        if barrier_add_counter >= 15:
-            barriers.append(Barrier(width=50, height=random.randint(10, 30), speed=random.randint(10, 30)))
-            barrier_add_counter = 0
 
-        # Move and draw barriers
-        for barrier in barriers[:]:
-            barrier.move()
-            barrier.draw()
 
-            if barrier.off_screen():
-                barriers.remove(barrier)
-
-        keys = pygame.key.get_pressed()
-        if keys[pygame.K_UP]:
-            player.move('up')
-            player_moved_counter_up += 1
-        elif keys[pygame.K_DOWN]:
-            player.move('down')
-            player_moved_counter_down += 1
-        elif keys[pygame.K_q]:
-            running = False
-
-        if player_moved_counter_up == 6:
-            # player_move_up_sound.play()
-            player_moved_counter_up = 0
-
-        if player_moved_counter_down == 6:
-            # player_move_down_sound.play()
-            player_moved_counter_down = 0
-
-        player.draw()
-
-        for barrier in barriers:
-            if barrier.collides_with(player.rect):
-                # print("Game Over!")
-                player.color = WHITE
-                player_hit = True
-                player_initial_tap = True
-                player_lives -= 1
-                # pygame.quit()
-                # sys.exit()
-
-        if player_hit and player_regen_counter > 10:
-            player_hit = False
-            player.color = player_color
-            player_regen_counter = 0
-        else:
-            player_regen_counter += 1
-
-        if player_initial_tap:
-            # player_impact_sound.play()
-            player_initial_tap = False
-
-        if player_lives == 0:
-            pygame.quit()
-            sys.exit()
-
-        print(player_lives)
-
-        pygame.display.flip()
-        clock.tick(FPS)
 
 
 if __name__ == "__main__":

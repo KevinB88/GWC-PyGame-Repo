@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73fa33a6-550d-4001-8805-fd2b4a7fbebe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MathGame/GameVoiceLines/Available_Voices" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MathGame/GameVoiceLines/default_daniel_voice_lines.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MathGame/GameVoiceLines/lines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MathGame/GameVoiceLines/voice-testing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MathGame/GameVoiceLines/voice_lines_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MathGame/Game_Time/Game_Timer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MathGame/Game_Time/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MathGame/Text_To_Speech_Pack/Math_Game_Speech_Module.py" beforeDir="false" afterPath="$PROJECT_DIR$/MathGame/Text_To_Speech_Pack/Math_Game_Speech_Module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MathGame/Game_Logic/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/MathGame/Game_Logic/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MathGame/game-logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/MathGame/game-logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mini_Games/Dodge_Barrier_Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mini_Games/Dodge_Barrier_Game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Random-Generation/Barriers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Random-Generation/Barriers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,25 +37,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.Barriers.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Example123.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Field.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Moving-Screen.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Pixel-Anim.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Pygame-Update-Display-ex.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data-type-unpacking-test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.game-logic.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/GWC/PyGame/GWC-PyGame-Repo&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.Barriers.executor": "Run",
+    "Python.Dodge_Barrier_Game.executor": "Run",
+    "Python.Example123.executor": "Run",
+    "Python.Field.executor": "Run",
+    "Python.Moving-Screen.executor": "Run",
+    "Python.Pixel-Anim.executor": "Run",
+    "Python.Pygame-Update-Display-ex.executor": "Run",
+    "Python.data-type-unpacking-test.executor": "Run",
+    "Python.game-logic.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/GWC/PyGame/GWC-PyGame-Repo",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
-  <component name="RunManager" selected="Python.Barriers">
+}]]></component>
+  <component name="RunManager" selected="Python.Dodge_Barrier_Game">
     <configuration name="Barriers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GWC-PyGame-Repo" />
       <option name="ENV_FILES" value="" />
@@ -84,6 +79,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Dodge_Barrier_Game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="GWC-PyGame-Repo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Mini_Games" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Mini_Games/Dodge_Barrier_Game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Example123" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="GWC-PyGame-Repo" />
       <option name="ENV_FILES" value="" />
@@ -98,28 +115,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Playing-Field/Example123.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Field" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="GWC-PyGame-Repo" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Playing-Field" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Playing-Field/Field.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -174,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Dodge_Barrier_Game" />
         <item itemvalue="Python.Barriers" />
         <item itemvalue="Python.game-logic" />
         <item itemvalue="Python.data-type-unpacking-test" />
         <item itemvalue="Python.Example123" />
-        <item itemvalue="Python.Field" />
       </list>
     </recent_temporary>
   </component>

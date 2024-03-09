@@ -23,7 +23,7 @@ wrong_sound_path = '/Users/kbedoya88/Desktop/PROJECTS24/PyCharm/GWC/PyGame/GWC-P
 wrong_sound = pygame.mixer.Sound(wrong_sound_path)
 
 voice = 'Daniel'
-character = 'Daniel'
+character = 'Rishi'
 
 # Available characters: Samantha(English), Daniel(English), Thomas(French), Milena(Russian), Whisper(WARNING: Creepy), Zarox (Robotic)
 # Moira (Irish English), Tessa (South African English)
@@ -411,7 +411,7 @@ def math_game_v1():
                         print("You've redeemed yourself!", character)
 
                     if voice:
-                        speak("Your BAD streak has reset to 0!")
+                        speak("Your BAD streak has reset to 0!", character)
                     else:
                         print("Your BAD streak has reset to 0!")
 
